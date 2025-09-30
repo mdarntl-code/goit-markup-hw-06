@@ -168,6 +168,9 @@ img {
     padding: 72px 0;
     max-width: 320px;
     margin: 0 auto;
+    @media screen and (min-resolution: 2x), (-webkit-min-device-pixel-ratio: 2) {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/mob-bg2x.jpg");  
+    }
 }
 
 .hero-title {
@@ -242,9 +245,10 @@ img {
 }
 
 .feature-icon-container {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
+    max-width: 264px;
     height: 112px;
     background-color: #f4f4fd;
     border-radius: 4px;
@@ -399,7 +403,7 @@ img {
 }
 
 .portfolio-item {
-    /* width: calc((100% - 48px) / 3); */
+    column-gap: 24px;
     width: 100%;
     position: relative;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -438,6 +442,13 @@ img {
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     width: 100%;
     height: 100%;
+}
+
+.portfolio-image{
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 
@@ -609,15 +620,15 @@ img {
 
 .modal {
     position: absolute;
-    width: 408px;
-    min-height: 584px;
+    width: 288px;
+    min-height: 623px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background: #fcfcfc;
     border-radius: 4px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 72px 24px 24px 24px;
+    padding: 72px 24px 16px 16px;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -989,6 +1000,10 @@ img {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+
+        @media screen and (min-resolution: 2x), (-webkit-min-device-pixel-ratio: 2) {
+            background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/tab-bg2x.jpg");
+        }
     }
     .hero-title {
         font-weight: 700;
@@ -1003,16 +1018,21 @@ img {
     .hero-btn {
         margin-top: 36px;
     }
+
     /* FEATURES */
     .features {
         padding: 96px 0;
+        margin: 0 auto;
     }
     .features-list {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
+        row-gap: 24px;
+        column-gap: 72px;
     }
     .features-item {
+        /* max-width: 356px; */
+
         flex: 0 1 calc(50% - 10px);
         height: 120px;
         box-sizing: border-box;
@@ -1040,6 +1060,32 @@ img {
   
     .team-item:nth-child(n + 3) {
       margin-bottom: 32px; 
+    }
+
+
+    /* PORTFOLIO */
+
+    .portfolio{
+        padding: 96px 0;
+    }
+
+    .portfolio-title{
+        margin-bottom: 72px;
+    }
+
+    .portfolio-list{
+        row-gap: 72px;
+        column-gap: 24px;
+    }
+
+    .portfolio-item {
+        width: 356px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .div-portfolio{
+        width: 365px;
     }
 
     /* FOOTER */
@@ -1088,11 +1134,17 @@ img {
 
 }
 
+
+/* MEDIA DESKTOP */
+
 @media screen and (min-width: 1158px) {
+
     .container {
         max-width: 1158px;
         padding: 0 15px;
     }
+
+
     .header-logo {
         margin-right: 76px;
     }
@@ -1109,4 +1161,48 @@ img {
         color: #434455;
         transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
-}
+
+    /* HERO */
+   
+    .hero{
+        max-width: 1440px;
+        height: 600px;
+        padding: 188px 0;
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/main-bg.jpg");
+
+        @media screen and (min-resolution: 2x), (-webkit-min-device-pixel-ratio: 2) {
+            background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/main-bg2x.jpg");  
+        }
+    }
+
+    .hero-btn{
+        margin-top: 48px;
+    }
+
+    /* FEATURE */
+
+    .features {
+        margin-bottom: 120px;
+        padding-top: 120px;
+    }
+
+    .feature-icon-container{
+        display: flex;
+    }
+
+    .features-item{
+       max-width: 264px;
+       height: 224px;
+    }
+    
+
+    /* TEAM */
+
+    .team {
+        padding: 120px 0;
+    }
+
+    
+
+    
+}   
