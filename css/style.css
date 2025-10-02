@@ -462,7 +462,6 @@ img {
 .footer-div {
   display: flex;
   flex-wrap: wrap;
-  /* align-items: baseline; */
 }
 
 .footer-logo-paragraph {
@@ -475,6 +474,7 @@ img {
 }
 
 .footer-logo {
+  padding-bottom: 0;
   margin: 0 86px;
   display: inline-block;
   max-width: 116px;
@@ -1110,7 +1110,7 @@ img {
     gap: 12px;
     row-gap: 12px;
     border: none;
-    margin-left: 94px;
+    max-width: 584px;
   }
   .footer-logo-paragraph {
     margin: 0;
@@ -1132,6 +1132,7 @@ img {
   .footer-logo {
     margin-left: auto;
     padding-top: 0;
+    padding-bottom: 0;
   }
   .input-btn {
     display: flex;
@@ -1249,23 +1250,47 @@ img {
 
   /* FOOTER */
 
-  .footer-div {
-    align-items: flex-start;
+  .footer-page {
+    padding: 100px 0;
   }
-/* 
-  .footer-list-icons {
-    margin-left: 120px;
-  } */
 
-  .footer-logo-paragraph {
-    margin-right: 120px; /* Adjusted margin for the first footer logo paragraph */
+  .footer-logo{
+    padding-bottom: 0;
   }
-  .footer-div-container:first-child {
-    margin-right: 120px; /* відступ до соцмереж */
+
+  .footer-div {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    max-width: 1158px;
   }
+
+
+  .footer-div-container {
+    margin-right: 0;
+  }
+
+  .footer-description{
+    margin-right: 120px;
+    margin-bottom: 0;
+  }
+
+  .footer-list-icons{
+    margin-right: 80px;
+    margin-bottom: 0;
+  }
+
+  
   .footer-flex {
     display: flex;
     align-items: flex-start;
-    margin-right: 80px;
+  }
+
+  .footer-input{
+    width: 264px;
+  }
+
+  .footer-input-btn{
+    max-width: 165px;
   }
 }
